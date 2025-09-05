@@ -4,48 +4,6 @@ const enterBtn = document.getElementById("enter-btn");
 enterBtn.addEventListener("click", () => overlay.style.display = "none");
 
 
-const backdrop = document.getElementById("backdrop");
-const letters = document.querySelectorAll(".letter");
-
-const dataMap = {
-  B: { img: "pictures/blade.jpg", sfx: "sounds/taiko.mp3" },
-  U: { img: "pictures/armor.jpg", sfx: "sounds/shakuhachi.mp3" },
-  S: { img: "pictures/samurai.jpg", sfx: "sounds/koto.mp3" },
-  H: { img: "pictures/temple.jpg", sfx: "sounds/gong.mp3" },
-  I: { img: "pictures/ink.jpg", sfx: "sounds/flute.mp3" },
-  D: { img: "pictures/discipline.jpg", sfx: "sounds/drum.mp3" },
-  O: { img: "pictures/oath.jpg", sfx: "sounds/bell.mp3" },
-};
-
-let currentAudio = null;
-
-letters.forEach(letter => {
-  letter.addEventListener("mouseenter", () => {
-    const key = letter.dataset.key;
-    const assets = dataMap[key];
-    if (!assets) return;
-
-    backdrop.style.backgroundImage = `url(${assets.img})`;
-    backdrop.style.opacity = 0.5;
-
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio = null;
-    }
-    currentAudio = new Audio(assets.sfx);
-    currentAudio.play();
-  });
-
-  letter.addEventListener("mouseleave", () => {
-    backdrop.style.opacity = 0;
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio = null;
-    }
-  });
-});
-
-
 // Translation toggle
 const translateBtn = document.getElementById("translate-btn");
 let translated = false;
@@ -53,15 +11,15 @@ let translated = false;
 translateBtn.addEventListener("click", () => {
 	translated = !translated;
 
-	if (translated) {
+	if (translated) { //Essentially if it's Japanese
 		// Hero title
 		document.querySelector(".hero-title").textContent = "武士道";
 
 		// Section heading
 		document.querySelector(".virtues h2").textContent = "武士道の七つの徳";
 
-		// Virtues
-		const virtues = document.querySelectorAll(".virtue");
+		// Virtues 
+		const virtues = document.querySelectorAll('.virtue')
 		const jpVirtues = [
 			"義 — Gi",
 			"礼 — Rei",
@@ -83,21 +41,10 @@ translateBtn.addEventListener("click", () => {
 
 		// Button text
 		translateBtn.textContent = "🌐 Translate English";
-	} else {
+	} else { //essentially if it's englishj 
 		// Hero title
 		const heroTitle = document.querySelector(".hero-title");
-		heroTitle.innerHTML = `
-			<span class="letter" data-key="B">B</span>
-			<span class="letter" data-key="U">U</span>
-			<span class="letter" data-key="S">S</span>
-			<span class="letter" data-key="H">H</span>
-			<span class="letter" data-key="I">I</span>
-			<span class="letter" data-key="D">D</span>
-			<span class="letter" data-key="O">O</span>
-		`;
-
-		// Rebind hero interactivity after resetting HTML
-		bindHeroLetters();
+		heroTitle.innerHTML = `<span class="letter">BUSHIDO</span>`;
 
 		// Section heading
 		document.querySelector(".virtues h2").textContent = "The Seven Virtues of Bushidō";
@@ -127,35 +74,3 @@ translateBtn.addEventListener("click", () => {
 		translateBtn.textContent = "🌐 Translate 日本語";
 	}
 });
-
-// Rebind function for hero letters when switching back
-function bindHeroLetters() {
-	const backdrop = document.getElementById("backdrop");
-	const letters = document.querySelectorAll(".letter");
-
-	letters.forEach(letter => {
-		letter.addEventListener("mouseenter", () => {
-			const key = letter.dataset.key;
-			const assets = dataMap[key];
-			if (!assets) return;
-
-			backdrop.style.backgroundImage = `url(${assets.img})`;
-			backdrop.style.opacity = 0.5;
-
-			if (currentAudio) {
-				currentAudio.pause();
-				currentAudio = null;
-			}
-			currentAudio = new Audio(assets.sfx);
-			currentAudio.play();
-		});
-
-		letter.addEventListener("mouseleave", () => {
-			backdrop.style.opacity = 0;
-			if (currentAudio) {
-				currentAudio.pause();
-				currentAudio = null;
-			}
-		});
-	});
-}

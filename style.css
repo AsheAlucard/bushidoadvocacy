@@ -64,28 +64,17 @@ body {
 }
 .hero-title {
   font-size: 10vw;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  gap: 0.2em;
-}
-.letter {
-  background-clip: text;
-  -webkit-background-clip: text;
-  filter: drop-shadow(5px 5px 5px black);
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.letter:hover { transform: scale(1.2); }
-.backdrop {
-  position: absolute;
-  inset: 0;
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+  color: transparent; /* hide the text itself */
+  background-image: url('virtues-images/HERO/hero original.png'); /* the hero image */
   background-size: cover;
   background-position: center;
-  opacity: 0;
-  filter: blur(12px);
-  transition: opacity 0.4s;
-  z-index: -1;
+  -webkit-background-clip: text; /* Safari/Chrome */
+  background-clip: text;         /* standard */
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.7));
+  z-index: 1;
 }
 
 /* Virtues */
@@ -143,9 +132,8 @@ body {
 	position: fixed;
 	top: 1rem;
 	right: 1rem;
-	z-index: 2000;
+	z-index: 1;
 }
-
 .tools button {
 	background: var(--parchment);
 	color: var(--ink);
@@ -163,6 +151,120 @@ body {
 	background: var(--blood);
 	color: var(--parchment);
 }
+
+/* Virtue Pages */
+/* All of this part was ChatGPT'd */
+
+.link2otherpage {
+  text-decoration: none; /* remove underline */
+}
+
+.link2otherpage .virtue {
+  cursor: pointer;
+}
+
+.virtue-page {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.virtue-page section {
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.virtue-page .description {
+  background: #2a2a2a; /* dark gray */
+  color: var(--parchment);
+}
+.virtue-page .details {
+  background: #1f1f1f; /* slightly darker gray */
+  color: var(--parchment);
+}
+.virtue-page .details h3 {
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+.virtue-page .image-section {
+  background: #262626; /* mid-gray */
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.virtue-page blockquote {
+  background: #1C1C1C; /* match index.html quote background */
+  border-left: 4px solid var(--blood);
+  color: var(--parchment);
+  padding: 1rem 1.5rem;
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  border-radius: 0.5rem;
+}
+.virtue-page h2 {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.virtue-page p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.virtue-page img {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  filter: drop-shadow(0 0 1rem black);
+}
+
+/* Back Button Style */
+.virtue-page .back-btn {
+  background: var(--blood);
+  color: var(--parchment);
+  border: none;
+  padding: 0.8rem 3rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  filter: drop-shadow(0 0 0.5rem black);
+}
+
+.virtue-page .back-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+
+/* About us (I actually did this) */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-grid section {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #2a2a2a;
+  color: var(--parchment);
+  box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 
 /* Screen width support shit (that rhymes!) */
