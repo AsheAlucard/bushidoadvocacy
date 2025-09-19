@@ -20,7 +20,8 @@
 	<!-- Tools Bar -->
 	<nav class="tools">
 		<button id="translate-btn">🌐 Translate 日本語</button>
-		<a href="other-html-pages/aboutus.html" class="link2otherpage"><button>📕 About Us</button></a>
+    <button><a href="other-html-pages/aboutus.html" class="link2otherpage">📕 About Us</a></button>
+		
 	</nav>
 
   <!-- Hero -->
@@ -35,13 +36,13 @@
   <section class="virtues">
     <h2>The Seven Virtues of Bushidō</h2>
     <div class="virtue-grid">
-      <a href="other-html-pages/gi.html" class="link2otherpage"><div class="virtue">Gi — Righteousness</div></a>
-      <a href="other-html-pages/rei.html" class="link2otherpage"><div class="virtue">Rei — Respect</div></a>
-      <a href="other-html-pages/yu.html" class="link2otherpage"><div class="virtue">Yu — Courage</div></a>
-      <a href="other-html-pages/meiyo.html" class="link2otherpage"><div class="virtue">Meiyo — Honor</div></a>
-      <a href="other-html-pages/jin.html" class="link2otherpage"><div class="virtue">Jin — Compassion</div></a>
-      <a href="other-html-pages/makoto.html" class="link2otherpage"><div class="virtue">Makoto — Integrity</div></a>
-      <a href="other-html-pages/chuugi.html" class="link2otherpage"><div class="virtue">Chuugi — Loyalty</div></a>
+      <a href="other-html-pages/gi.html" class="link2otherpage"><div class="virtue gi">Gi — Righteousness</div></a>
+      <a href="other-html-pages/rei.html" class="link2otherpage"><div class="virtue rei">Rei — Respect</div></a>
+      <a href="other-html-pages/yu.html" class="link2otherpage"><div class="virtue yu">Yu — Courage</div></a>
+      <a href="other-html-pages/meiyo.html" class="link2otherpage"><div class="virtue meiyo">Meiyo — Honor</div></a>
+      <a href="other-html-pages/jin.html" class="link2otherpage"><div class="virtue jin">Jin — Compassion</div></a>
+      <a href="other-html-pages/makoto.html" class="link2otherpage"><div class="virtue makoto">Makoto — Integrity</div></a>
+      <a href="other-html-pages/chuugi.html" class="link2otherpage"><div class="virtue chuugi">Chuugi — Loyalty</div></a>
     </div>
   </section>
 
@@ -56,5 +57,19 @@
       <span>— Inazō Nitobe, *Bushidō: The Soul of Japan*</span>
     </blockquote>
   </section>
+  <!-- make an srcset -->
+   <img 
+   
+      alt="Hero image for footer" 
+      
+      srcset="virtues-images\hero\hero480.png 480w,
+              virtues-images\hero\hero960.png 960w,
+              virtues-images\hero\hero1920.png 1920w"
+      
+      sizes="(max-width: 480px) 480px,
+             (max-width: 960px) 960px,
+             (max-width: 1920px) 1920px"
+      
+      src="virtues-images\hero\hero.png">
 </body>
 </html>

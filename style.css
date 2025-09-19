@@ -97,6 +97,7 @@ body {
   color: var(--ink);
   padding: 2rem;
   border-radius: 0.8rem;
+  background: url("virtues-images/hero/hero.png") center/120%;
   font-weight: 700;
   transition: transform 0.3s, background 0.3s;
   filter: drop-shadow(0 0 0.5rem black);
@@ -161,6 +162,7 @@ body {
 
 .link2otherpage .virtue {
   cursor: pointer;
+  color: white;
 }
 
 .virtue-page {
@@ -256,6 +258,32 @@ body {
   color: var(--parchment);
   box-shadow: 0 0 1rem rgba(0,0,0,0.5);
 }
+
+
+
+.gi {
+  background: url("virtues-images/grid/gi/gi.png") center/130%;
+}
+.chuugi {
+  background: url("virtues-images/grid/chuugi/chuugi.png") center/130%;
+}
+.jin {
+  background: url("virtues-images/grid/jin/jin.png") center/130%;
+}
+.makoto {
+  background: url("virtues-images/grid/makoto/makoto.png") center/130%;
+}
+.meiyo {
+  background: url("virtues-images/grid/meiyo/meiyo.png") center/130%;
+}
+.rei {
+  background: url("virtues-images/grid/rei/rei.png") center/130%;
+}
+.yu {
+  background: url("virtues-images/grid/yu/yu.png") center/120%;
+}
+
+
 
 /* Responsive: stack on smaller screens */
 @media (max-width: 768px) {
