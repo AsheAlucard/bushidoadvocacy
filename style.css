@@ -4,8 +4,9 @@
   --ink: #1C1C1C;
   --parchment: #F8F4E3;
   --blood: #8B0000;
-  --gold: #C9A86A;
+  --gold: #FFE08A;
   --steel: #5A5A5A;
+  --link: #F8F4E3;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -94,7 +95,7 @@ body {
 }
 .virtue {
   background: var(--parchment);
-  color: var(--ink);
+  color: white;
   padding: 2rem;
   border-radius: 0.8rem;
   background: url("virtues-images/hero/hero.png") center/120%;
@@ -158,11 +159,7 @@ body {
 
 .link2otherpage {
   text-decoration: none; /* remove underline */
-}
-
-.link2otherpage .virtue {
-  cursor: pointer;
-  color: white;
+  color: var(--link);
 }
 
 .virtue-page {
@@ -259,7 +256,9 @@ body {
   box-shadow: 0 0 1rem rgba(0,0,0,0.5);
 }
 
-
+.details a,link {
+  color: var(--link);
+}
 
 .gi {
   background: url("virtues-images/grid/gi/gi.png") center/130%;
